@@ -5,10 +5,11 @@ license="All rights reserved"
 [[mods]]
 modId="thaumcraft"
 version="${file.jarVersion}"
-displayName="Example Mod"
+displayName="Thaumcraft"
 logoFile="icon.png"
-authors="wdog5"
+authors="wdog5 | SSOrangeCATY"
 description='''
+本模组基于1.7.10的神秘时代4重写而来,其中不限于新增玩法,机制,或直接将某些附属模组内容直接添加进本体中.S
 '''
 
 [[dependencies.thaumcraft]]

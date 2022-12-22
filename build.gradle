@@ -2,11 +2,10 @@ plugins {
     id 'eclipse'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '5.1.+'
-	id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
-version = project.mod_version
-group = project.maven_group
+version = "0.1"
+group = "net.archasmiel.thaumcraft"
 archivesBaseName = project.archives_base_name
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -14,7 +13,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 
 minecraft {
-    mappings channel: 'parchment', version: '2022.12.18-1.19.3'
+    mappings channel: 'official', version: '1.19.3'
 
     runs {
         client {
@@ -32,7 +31,6 @@ minecraft {
                 }
             }
         }
-
         server {
             workingDirectory project.file('run')
 
@@ -87,7 +85,9 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-
+    gradlePluginPortal()
+    maven { url = 'https://maven.minecraftforge.net/' }
+    maven { url = 'https://maven.parchmentmc.org' }
 }
 
 dependencies {
