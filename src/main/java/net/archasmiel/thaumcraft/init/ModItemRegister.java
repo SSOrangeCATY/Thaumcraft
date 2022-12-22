@@ -1,7 +1,7 @@
 package net.archasmiel.thaumcraft.init;
 
-import net.archasmiel.thaumcraft.generation.ModItemGeneration;
-import net.archasmiel.thaumcraft.generation.wandGeneration.Wand;
+import net.archasmiel.thaumcraft.datagen.generation.ModItemGeneration;
+import net.archasmiel.thaumcraft.datagen.generation.wandGeneration.Wand;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -161,7 +161,7 @@ public class ModItemRegister {
     public static final RegistryObject<Item> NUGGETBEEF = registerCommonItem("nuggetbeef","item");
     public static final RegistryObject<Item> NUGGETCHICKEN = registerCommonItem("nuggetchicken","item");
     public static final RegistryObject<Item> NUGGETCOPPER = registerCommonItem("nuggetcopper","item");
-    public static final RegistryObject<Item> NUGGETFISH = registerCommonItem("dust","item");
+    //public static final RegistryObject<Item> NUGGETFISH = registerCommonItem("dust","item");
     public static final RegistryObject<Item> NUGGETIRON = registerCommonItem("nuggetiron","item");
     public static final RegistryObject<Item> NUGGETLEAD = registerCommonItem("nuggetlead","item");
     public static final RegistryObject<Item> NUGGETPORK = registerCommonItem("nuggetpork","item");

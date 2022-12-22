@@ -1,14 +1,20 @@
-package net.archasmiel.thaumcraft.generation.wandGeneration;
+package net.archasmiel.thaumcraft.datagen.generation.wandGeneration;
 
 import net.archasmiel.thaumcraft.capability.WandElementCapability;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import org.jetbrains.annotations.NotNull;
@@ -18,7 +24,6 @@ import java.util.List;
 
 public class Wand extends BowItem {
     private String quality;
-    CompoundTag elements = new CompoundTag();
     WandElementCapability handler;
     public Wand(Properties pProperties) {
         super(pProperties);
@@ -30,17 +35,25 @@ public class Wand extends BowItem {
     public Wand(Properties pProperties,String quality,int element,int maxElement) {
         super(pProperties);
         this.quality = quality;
-        handler = new WandElementCapability(elements, element,maxElement);
+        handler = new WandElementCapability(new CompoundTag(), element,maxElement);
     }
     public Wand(Properties Properties,String quality,int element,int maxFire,int maxWater,int maxEarth,int maxOrder,int maxChaos,int maxWind) {
         super(Properties);
         this.quality = quality;
-        handler = new WandElementCapability(elements,element,maxFire,maxWater,maxEarth,maxOrder,maxChaos,maxWind);
+        handler = new WandElementCapability(new CompoundTag(),element,maxFire,maxWater,maxEarth,maxOrder,maxChaos,maxWind);
     }
     public String ItemQuality() {return quality;}
     @Override
     public @NotNull UseAnim getUseAnimation(@NotNull ItemStack p_40678_) {
         return UseAnim.BOW;
+    }
+
+    @Override
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand hand) {
+        ItemStack itemstack = player.getItemInHand(hand);
+        if (level.getBlockState(new BlockPos(player.getEyePosition())).getBlock() == Blocks.GRASS_BLOCK){
+            return InteractionResultHolder.consume(itemstack);
+        } else return InteractionResultHolder.fail(itemstack);
     }
 
 

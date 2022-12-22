@@ -1,4 +1,4 @@
-package net.archasmiel.thaumcraft.generation;
+package net.archasmiel.thaumcraft.datagen.generation;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;

@@ -163,7 +163,7 @@ public class ItemGroupEvent {
                                pOutput.accept(ModItemRegister.NUGGETBEEF.get());
                                pOutput.accept(ModItemRegister.NUGGETCHICKEN.get());
                                pOutput.accept(ModItemRegister.NUGGETCOPPER.get());
-                               pOutput.accept(ModItemRegister.NUGGETFISH.get());
+                               //pOutput.accept(ModItemRegister.NUGGETFISH.get());
                                pOutput.accept(ModItemRegister.NUGGETIRON.get());
                                pOutput.accept(ModItemRegister.NUGGETLEAD.get());
                                pOutput.accept(ModItemRegister.NUGGETPORK.get());
