@@ -34,6 +34,7 @@ public class ModItems {
     private static RegistryObject<Item> registerRareMagicItem(String name, String quality) {
         return register(name, () -> new MagicItem(new Item.Properties().stacksTo(1), quality));
     }
+
     private static RegistryObject<Item> registerCommonMagicItem(String name, String quality) {
         return register(name, () -> new MagicItem(new Item.Properties(), quality));
     }
