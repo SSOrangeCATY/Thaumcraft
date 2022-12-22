@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[44,)"
+license="All rights reserved"
+
+[[mods]]
+modId="thaumcraft"
+version="${file.jarVersion}"
+displayName="Example Mod"
+logoFile="icon.png"
+authors="wdog5"
+description='''
+'''
+
+[[dependencies.thaumcraft]]
+modId="forge"
+mandatory=true
+versionRange="[44,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.thaumcraft]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.19.3,1.20)"
+ordering="NONE"
+side="BOTH"
